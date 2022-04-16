@@ -26,7 +26,7 @@ func main() {
         time.Sleep(2 * time.Second)
     
 	c := colly.NewCollector(
-        colly.AllowedDomains("aw-online.lordfilms-s.art"),
+        colly.AllowedDomains("new.lordfilms-s.art"),
     )
 
     c.OnHTML(".th-item", func(e *colly.HTMLElement) {
@@ -49,7 +49,7 @@ func main() {
     })
       
     for pages := 1; pages < 320; pages++ {
-        c.Visit("http://ax-online.lordfilms-s.art/filmy/filmy-uzhasy/page/" + strconv.Itoa(pages) + "/")        
+        c.Visit("http://new.lordfilms-s.art/f-uzhas/page/" + strconv.Itoa(pages) + "/")        
     }
     s.Stop()
     frameParse()
@@ -79,7 +79,7 @@ func frameParse() {
 	    ///////////////////////////////////////
 
 	 b := colly.NewCollector(
-     	 colly.AllowedDomains("ax-online.lordfilms-s.art"),
+     	 colly.AllowedDomains("new.lordfilms-s.art"),
      )
 
 		s := spinner.New(spinner.CharSets[43], 100*time.Millisecond) 
